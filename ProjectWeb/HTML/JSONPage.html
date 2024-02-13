@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <link rel="stylesheet" href="../StyleCSS/jsonstyle.css">
+    <title>Movies.com</title>
+</head>
+
+<body>
+    <header> 
+        <div class="title">
+            <div class="left-content">
+            <img src="../images/cameratapegre.png" alt="Logo">
+            <div class="title-content">
+                <h1><c1> Movies List</c1></h1>
+                <nav>
+                    <a href="Main.html">Home</a>
+                    <a href="JSONPage.html">Load JSON</a>
+                    <a href="XMLPage.html">XML</a>
+                </nav>
+                </div>
+                </div>
+    </header>
+
+    <main> 
+        
+        <section>
+            <section id="movie-section">
+                <h3>Select Here</h3>
+                <button onclick="loadMovies()">Load Movies</button>
+                <div id="movie-list"></div>
+            </section>
+        </section>
+            
+    </main>
+
+    <footer>
+        <p>&copy; 2023 web</p>
+    </footer>
+
+    <script>
+        function loadMovies() {
+            // Fetches the data from json file
+            fetch("../JSON/data.json")
+                .then(response => response.json())
+                .then(data => {
+                    // Displays data
+                    document.getElementById('movie-list').innerHTML = JSON.stringify(data, null, 2);
+                })
+                .catch(error => console.error('error:', error));
+        }
+    </script>
+
+</body>
+</html>
