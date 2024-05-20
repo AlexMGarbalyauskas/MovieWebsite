@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <link rel="stylesheet" href="./StyleCSS/xmlPageStyle.css">
+    <title>Movies.com</title>
+</head>
+
+<body>
+    <header> 
+        <div class="title">
+            <div class="left-content">
+            <img src="./images/cameratapegre.png" alt="Logo">
+            <div class="title-content">
+                <h1><c1> Movies List</c1></h1>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="JSONPage.html">Load JSON</a>
+                    <a href="XMLPage.html">XML</a>
+                </nav>
+                </div>
+                </div>
+    </header>
+
+    <main> 
+        <section>
+            <section id="movie-section">
+                <h3>From here you can view the xml table data</h3>
+                <p> select the button below</p>
+                <button class="load-button" onclick="loadXML()">Load XML</button>
+                <div id="movie-list"></div>
+            </section>
+        </section>
+        <script>
+           function loadXML() {
+        fetch("./XML/data.xml")
+            .then(response => response.text())
+            .then(xml => {
+                
+                //fetches the xml
+                fetch("./XML/stylesheet.xsl") 
+                    .then(response => response.text())
+                    .then(xsl => {
+                        const xsltProcessor = new XSLTProcessor();
+                        const parser = new DOMParser();
+                        const xmlDoc = parser.parseFromString(xml, "text/xml");
+                        const xslDoc = parser.parseFromString(xsl, "text/xml");
+                        xsltProcessor.importStylesheet(xslDoc);
+                        const resultDocument = xsltProcessor.transformToDocument(xmlDoc);
+                        const result = new XMLSerializer().serializeToString(resultDocument);
+                        
+                        // Displays on the html
+                        document.getElementById("movie-list").innerHTML = result;
+                    });
+            });
+    }
+        </script>
+            
+    </main>
+
+    <footer>
+        <p>&copy; 2023 web</p>
+    </footer>
+
+</body>
+</html>
