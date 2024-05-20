@@ -1,0 +1,77 @@
+{
+    "Movies_List": [
+
+      {
+        "ID": "001",
+        "Title": "Max Speed",
+        "Genre": "Action",
+        "Release_date": "03/12/2023"
+        
+      },
+      {
+        "ID": "002",
+        "Title": "Crime story",
+        "Genre": "Crime",
+        "Release_date": "08/10/2023"
+        
+      },
+      {
+        "ID": "003",
+        "Title": "Mafia town",
+        "Genre": "Crime, Thriller",
+        "Release_date": "02/11/2023"
+        
+      },
+      {
+        "ID": "004",
+        "Title": "Super Hero",
+        "Genre": "Action",
+        "Release_date": "11/03/2022"
+        
+      },
+      {
+        "ID": "005",
+        "Title": "Night Out",
+        "Genre": "Horror",
+        "Release_date": "25/10/2023"
+        
+      },
+      {
+        "ID": "006",
+        "Title": "El Mexico",
+        "Genre": "Western",
+        "Release_date": "06/07/2022"
+
+      },
+      {
+        "ID": "007",
+        "Title": "World War",
+        "Genre": "Historical",
+        "Release_date": "06/02/2022"
+
+      },
+      {
+        "ID": "008",
+        "Title": "Lost",
+        "Genre": "Comedy",
+        "Release_date": "02/07/2023"
+
+      },
+      {
+        "ID": "009",
+        "Title": "Forest",
+        "Genre": "Horror",
+        "Release_date": "02/02/2021"
+
+      },
+      {
+        "ID": "010",
+        "Title": "Fell Down",
+        "Genre": "Comedy",
+        "Release_date": "11/01/2023"
+
+      }
+
+
+    ]
+  }
